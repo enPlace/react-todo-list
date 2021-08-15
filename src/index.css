@@ -26,3 +26,13 @@
 .navbar a:hover {
   color: #f1356d;
 }
+.todos{
+  margin: 0 auto;
+  max-width: 600px;
+}
+form{
+  margin: 0 auto;
+}
+input{
+  width: 80%
+}
