@@ -5,7 +5,7 @@ import Finished from "./Components/Finished";
 
 function App() {
   const [todoList, setTodoList] = useState([
-    { title: "Clean Room", added: new Date(), deadline: "07/16/2021", id: 1 },
+    { title: "Clean Room", added: new Date(new Date().setDate(new Date().getDate() - 1)), deadline: "08/16/2021", id: 1 },
     {
       title: "Setup development environment",
       added: new Date(),
@@ -39,13 +39,22 @@ function App() {
       id:6,
     }
   ]);
-  console.log(finishedList);
+
+  function handleComplete(id){
+    const completed = todoList.filter(item => item.id ===id);
+    setTodoList(todoList.filter(item=>item.id !==id));
+    let newFinished = finishedList;
+    newFinished.unshift(completed[0])
+    setFinishedList(newFinished)
+  }
+
+
+ 
   return (
     <div className="App">
       <Navbar></Navbar>
-      <Todos todoList={todoList}></Todos>
+      <Todos todoList={todoList} handleComplete={handleComplete}></Todos>
       <Finished finishedList = {finishedList}></Finished>
-      
     </div>
   );
 }

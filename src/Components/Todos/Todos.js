@@ -1,7 +1,6 @@
-const Todos = ({ todoList }) => {
+const Todos = ({ todoList, handleComplete }) => {
   return (
     <div className="todos list-container">
-        
       <div className="input">
         <form>
           <input type="text" />
@@ -13,9 +12,15 @@ const Todos = ({ todoList }) => {
         {todoList.map((item) => (
           <li className="todo-item">
             <h2>{item.title}</h2>
-            <button>complete</button>
+            <button
+              onClick={() => {
+                handleComplete(item.id);
+              }}
+            >
+              complete
+            </button>
             <p>
-              Date added: {item.added.getMonth()+1}/{item.added.getDate()}/
+              Date added: {item.added.getMonth() + 1}/{item.added.getDate()}/
               {item.added.getFullYear()}
             </p>
           </li>
