@@ -26,7 +26,7 @@
 .navbar a:hover {
   color: #f1356d;
 }
-.todos{
+.list-container{
   margin: 0 auto;
   max-width: 600px;
 }

@@ -1,6 +1,6 @@
 const Todos = ({ todoList }) => {
   return (
-    <div className="todos">
+    <div className="todos list-container">
         
       <div className="input">
         <form>
@@ -13,9 +13,9 @@ const Todos = ({ todoList }) => {
         {todoList.map((item) => (
           <li className="todo-item">
             <h2>{item.title}</h2>
-            <button>Complete</button>
+            <button>complete</button>
             <p>
-              Date added: {item.added.getMonth()}/{item.added.getDate()}/
+              Date added: {item.added.getMonth()+1}/{item.added.getDate()}/
               {item.added.getFullYear()}
             </p>
           </li>
