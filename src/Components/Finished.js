@@ -1,4 +1,4 @@
-const Finished = ({finishedList}) => {
+const Finished = ({finishedList, handleDelete, handleRestore}) => {
   return (
     <div className="finished list-container">
       <h1>Finished:</h1>
@@ -6,8 +6,12 @@ const Finished = ({finishedList}) => {
         {finishedList.map((item) => (
           <li className="finished-item">
             <h2>{item.title}</h2>
-            <button>delete</button>
-            <button>restore</button>
+            <button onClick = {()=>{
+              handleDelete(item.id)
+            }}>delete</button>
+            <button onClick = {()=>{
+              handleRestore(item.id)
+            }}>restore</button>
             <p>
               Date added: {item.added.getMonth() + 1}/{item.added.getDate()}/
               {item.added.getFullYear()}

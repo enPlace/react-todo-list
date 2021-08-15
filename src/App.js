@@ -5,7 +5,12 @@ import Finished from "./Components/Finished";
 
 function App() {
   const [todoList, setTodoList] = useState([
-    { title: "Clean Room", added: new Date(new Date().setDate(new Date().getDate() - 1)), deadline: "08/16/2021", id: 1 },
+    {
+      title: "Clean Room",
+      added: new Date(new Date().setDate(new Date().getDate() - 1)),
+      deadline: "08/16/2021",
+      id: 1,
+    },
     {
       title: "Setup development environment",
       added: new Date(),
@@ -36,25 +41,37 @@ function App() {
     {
       title: "Implement foobar",
       added: new Date(new Date().setDate(new Date().getDate() - 100)),
-      id:6,
-    }
+      id: 6,
+    },
   ]);
 
-  function handleComplete(id){
-    const completed = todoList.filter(item => item.id ===id);
-    setTodoList(todoList.filter(item=>item.id !==id));
+  function handleComplete(id) {
+    const completed = todoList.filter((item) => item.id === id);
+    setTodoList(todoList.filter((item) => item.id !== id));
     let newFinished = finishedList;
-    newFinished.unshift(completed[0])
-    setFinishedList(newFinished)
+    newFinished.unshift(completed[0]);
+    setFinishedList(newFinished);
+  }
+  function handleDelete(id) {
+    setFinishedList(finishedList.filter((item) => item.id !== id));
+  }
+  function handleRestore(id) {
+    const restoredItem = finishedList.filter((item) => item.id === id);
+    setFinishedList(finishedList.filter((item) => item.id !== id));
+    let newTodo = todoList;
+    newTodo.unshift(restoredItem[0])
+    setTodoList(newTodo)
   }
 
-
- 
   return (
     <div className="App">
       <Navbar></Navbar>
       <Todos todoList={todoList} handleComplete={handleComplete}></Todos>
-      <Finished finishedList = {finishedList}></Finished>
+      <Finished
+        finishedList={finishedList}
+        handleDelete={handleDelete}
+        handleRestore={handleRestore}
+      ></Finished>
     </div>
   );
 }
