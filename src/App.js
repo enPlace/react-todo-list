@@ -9,25 +9,25 @@ function App() {
     {
       title: "Clean Room",
       added: new Date(new Date().setDate(new Date().getDate() - 1)),
-      deadline: "08/16/2021",
+      deadline: new Date(2021, 7, 16), 
       id: 1,
     },
     {
       title: "Setup development environment",
       added: new Date(),
-      deadline: "08/16/2021",
+      deadline: new Date(2021, 7, 16),
       id: 2,
     },
     {
       title: "Develop website and add content",
       added: new Date(),
-      deadline: "08/24/2030",
+      deadline: new Date(2030, 7, 24),
       id: 3,
     },
     {
       title: "Deploy to live server",
       added: new Date(),
-      deadline: "08/25/2030",
+      deadline: new Date(2030, 8, 25),
       id: 4,
     },
   ]);
@@ -36,12 +36,13 @@ function App() {
     {
       title: "Book hotel in Santiago",
       added: new Date(new Date().setDate(new Date().getDate() - 3)),
-      deadline: "8/14/2021",
+      deadline: new Date(2021, 7, 14),
       id: 5,
     },
     {
       title: "Implement foobar",
       added: new Date(new Date().setDate(new Date().getDate() - 100)),
+      deadline: new Date(2021, 4, 8),
       id: 6,
     },
   ]);
@@ -79,6 +80,8 @@ function App() {
   function handleAddTask() {
     newTask.added = new Date()
     newTask.id = idCounter
+    const deadline = newTask.deadline.split("/")
+    newTask.deadline = new Date(deadline[2], deadline[0]-1, deadline[1])
     setIdCounter(idCounter+1)
     todoList.unshift(newTask)
     setNewTask({

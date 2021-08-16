@@ -39,3 +39,6 @@ form{
 #new-deadline{
   width: 30%
 }
+.past-due{
+  color: red;
+}
