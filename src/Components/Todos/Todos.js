@@ -1,4 +1,3 @@
-import { useState } from "react";
 const Todos = ({ todoList, handleComplete, handleAddTask,handleChange, newTask }) => {
 
   return (
@@ -7,7 +6,7 @@ const Todos = ({ todoList, handleComplete, handleAddTask,handleChange, newTask }
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log("hello!!!");
+            handleAddTask();
           }}
         >
           <input
@@ -28,7 +27,7 @@ const Todos = ({ todoList, handleComplete, handleAddTask,handleChange, newTask }
             onChange = {handleChange}
             autoComplete = "off"
           />
-          <button onClick={handleAddTask} type="submit">
+          <button type="submit">
             +
           </button>
         </form>

@@ -4,7 +4,7 @@ import Todos from "./Components/Todos/Todos";
 import Finished from "./Components/Finished";
 
 function App() {
-  let idCounter = 6;
+  const [idCounter, setIdCounter] = useState(7);
   const [todoList, setTodoList] = useState([
     {
       title: "Clean Room",
@@ -47,16 +47,14 @@ function App() {
   ]);
   const [newTask, setNewTask] = useState({
     title: "",
-    added: "",
     deadline: "",
-    id: "",
   });
 
   function handleComplete(id) {
-    const completed = todoList.filter((item) => item.id === id);
+    const completedItem = todoList.filter((item) => item.id === id);
     setTodoList(todoList.filter((item) => item.id !== id));
     let newFinished = finishedList;
-    newFinished.unshift(completed[0]);
+    newFinished.unshift(completedItem[0]);
     setFinishedList(newFinished);
   }
   function handleDelete(id) {
@@ -69,11 +67,7 @@ function App() {
     newTodo.unshift(restoredItem[0]);
     setTodoList(newTodo);
   }
-  function handleAddTask(e) {
-    console.log(document.getElementById("new-task").value);
-    console.log(e);
-    idCounter ++; 
-  }
+
 
   const handleChange = (e) => {
     setNewTask({
@@ -82,12 +76,22 @@ function App() {
     })
   }
 
+  function handleAddTask() {
+    newTask.added = new Date()
+    newTask.id = idCounter
+    setIdCounter(idCounter+1)
+    todoList.unshift(newTask)
+    setNewTask({
+      title: "",
+      deadline: "",
+    })
+  }
+
   return (
     <div className="App">
       <Navbar></Navbar>
       <Todos
         todoList={todoList}
-        idCounter={idCounter}
         handleComplete={handleComplete}
         handleAddTask={handleAddTask}
         handleChange = {handleChange}
