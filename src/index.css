@@ -33,6 +33,9 @@
 form{
   margin: 0 auto;
 }
-input{
-  width: 80%
+#new-task{
+  width: 50%
+}
+#new-deadline{
+  width: 30%
 }

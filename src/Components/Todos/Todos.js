@@ -1,10 +1,36 @@
-const Todos = ({ todoList, handleComplete }) => {
+import { useState } from "react";
+const Todos = ({ todoList, handleComplete, handleAddTask,handleChange, newTask }) => {
+
   return (
     <div className="todos list-container">
       <div className="input">
-        <form>
-          <input type="text" />
-          <button type="submit">+</button>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log("hello!!!");
+          }}
+        >
+          <input
+            name="title"
+            id="new-task"
+            type="text"
+            placeholder="enter task..."
+            value = {newTask.title}
+            onChange = {handleChange}
+            autoComplete= "off"
+          />
+          <input
+            name="deadline"
+            id="new-deadline"
+            type="text"
+            placeholder="deadline (mm/dd/yyyy)"
+            value = {newTask.deadline}
+            onChange = {handleChange}
+            autoComplete = "off"
+          />
+          <button onClick={handleAddTask} type="submit">
+            +
+          </button>
         </form>
       </div>
       <h1>Todo:</h1>
