@@ -48,6 +48,7 @@ const Todos = ({ todoList, handleComplete, handleAddTask,handleChange, newTask }
               Date added: {item.added.getMonth() + 1}/{item.added.getDate()}/
               {item.added.getFullYear()}
             </p>
+            <p>Deadline: {item.deadline}</p>
           </li>
         ))}
       </ul>
