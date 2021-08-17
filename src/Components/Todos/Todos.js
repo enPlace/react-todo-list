@@ -41,7 +41,7 @@ const Todos = ({
       <h1>Todo:</h1>
       <ul className="todo-list">
         {todoList.map((item) => {
-          let pastdue = item.deadline < new Date() ? "past-due" : ""
+          let pastdueValue = item.deadline < new Date() ? "past-due" : ""
 
           return (
             <li className="todo-item">
@@ -57,7 +57,7 @@ const Todos = ({
                 Date added: {item.added.getMonth() + 1}/{item.added.getDate()}/
                 {item.added.getFullYear()}
               </p>
-              <p class={pastdue}>
+              <p class={pastdueValue}>
                 Deadline: {item.deadline.getMonth() + 1}/
                 {item.deadline.getDate()}/{item.deadline.getFullYear()}
               </p>
