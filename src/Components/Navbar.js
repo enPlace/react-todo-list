@@ -1,10 +1,10 @@
-const Navbar = () => {
+const Navbar = ({handleShowHide}) => {
   return (
     <nav className="navbar">
       <div className="links">
-        <a href="/">Todo's</a>
-        <a href="/finished">Finished</a>
-        <a href="https://github.com/enPlace/react-todo-list">Github</a>
+        <p name = "todo" onClick = {()=>handleShowHide("todo")}>Todo's</p>
+        <p name = "finished"  onClick = {()=>{handleShowHide("finished")}}>Finished</p>
+        <a href="https://github.com/enPlace/react-todo-list"  target="_blank">Github</a>
       </div>
     </nav>
   );

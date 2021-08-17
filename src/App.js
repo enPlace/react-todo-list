@@ -5,6 +5,7 @@ import Finished from "./Components/Finished";
 
 function App() {
   const [idCounter, setIdCounter] = useState(7);
+  const [showHide, setShowHide] = useState("todo")
   const [todoList, setTodoList] = useState([
     {
       title: "Clean Room",
@@ -68,13 +69,18 @@ function App() {
     newTodo.unshift(restoredItem[0]);
     setTodoList(newTodo);
   }
-
-
   const handleChange = (e) => {
     setNewTask({
       ...newTask,
       [e.target.name]: e.target.value,
     })
+  }
+  const handleShowHide = (id) =>{
+    if (id === "todo"){
+      setShowHide("todo")
+    }else if (id ==="finished"){
+      setShowHide("finished")
+    }
   }
 
   function handleAddTask() {
@@ -92,18 +98,20 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar></Navbar>
+      <Navbar handleShowHide = {handleShowHide}></Navbar>
       <Todos
         todoList={todoList}
         handleComplete={handleComplete}
         handleAddTask={handleAddTask}
         handleChange = {handleChange}
         newTask = {newTask}
+        showHide = {showHide}
       ></Todos>
       <Finished
         finishedList={finishedList}
         handleDelete={handleDelete}
         handleRestore={handleRestore}
+        showHide= {showHide}
       ></Finished>
     </div>
   );

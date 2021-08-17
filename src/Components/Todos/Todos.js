@@ -4,9 +4,12 @@ const Todos = ({
   handleAddTask,
   handleChange,
   newTask,
+  showHide
 }) => {
+  let display = showHide!=="todo" ? "hide" : ""
+
   return (
-    <div className="todos list-container">
+    <div className={"todos list-container " + display}>
       <div className="input">
         <form
           onSubmit={(e) => {

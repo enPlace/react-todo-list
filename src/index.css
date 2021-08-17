@@ -13,11 +13,24 @@
   max-width: 600px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  
+}
+.links{
+  display: flex;
 }
 .navbar h1 {
   color: #f1356d;
 }
 
+.navbar p {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar p:hover {
+  color: #f1356d;
+  cursor: pointer;
+}
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
@@ -25,10 +38,14 @@
 }
 .navbar a:hover {
   color: #f1356d;
+  cursor: pointer;
 }
 .list-container{
   margin: 0 auto;
   max-width: 600px;
+}
+.list-container.hide{
+  display: none;
 }
 form{
   margin: 0 auto;
