@@ -94,7 +94,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar handleShowHide = {handleShowHide}></Navbar>
+      <Navbar handleShowHide = {handleShowHide} showHide = {showHide}></Navbar>
       <Todos
         todoList={todoList}
         handleComplete={handleComplete}

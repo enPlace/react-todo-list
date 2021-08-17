@@ -17,15 +17,23 @@
 }
 .links{
   display: flex;
+  align-items: center;
 }
 .navbar h1 {
   color: #f1356d;
 }
 
 .navbar p {
-  margin-left: 16px;
+  margin-left: 20px;
   text-decoration: none;
   padding: 6px;
+}
+.navbar p.active {
+  color : #f1356d;
+  transform: scale(1.2);
+  border-bottom: 2px solid #f1356d;
+  font-weight: bold;
+
 }
 .navbar p:hover {
   color: #f1356d;
