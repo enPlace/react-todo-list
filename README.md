@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     <img src="./todo-add.gif" alt="todo-add"/>
 - Displays a "past due" color when the deadline has passed 
 - Completing a todo item saves it in the "Finished tasks" list 
-    <img src="./todo-complete.gif"alt="todo-complete"/>
+<img src="./todo-complete.gif" alt="todo-complete"/>
 - From the finished tasks list, one can restore any task to the todo list or delete it.
 <img src="./todo-restore.gif" alt="todo-restore"/> 
 <img src="./todo-delete.gif" alt="todo-delete"/>
