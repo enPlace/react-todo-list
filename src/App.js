@@ -76,11 +76,7 @@ function App() {
     })
   }
   const handleShowHide = (id) =>{
-    if (id === "todo"){
-      setShowHide("todo")
-    }else if (id ==="finished"){
-      setShowHide("finished")
-    }
+    return id==="todo" ? setShowHide("todo") : setShowHide("finished")
   }
 
   function handleAddTask() {

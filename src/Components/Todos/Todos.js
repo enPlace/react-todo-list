@@ -41,10 +41,8 @@ const Todos = ({
       <h1>Todo:</h1>
       <ul className="todo-list">
         {todoList.map((item) => {
-          let pastdue;
-          if (item.deadline < new Date()) {
-            pastdue = "past-due";
-          }
+          let pastdue = item.deadline < new Date() ? "past-due" : ""
+
           return (
             <li className="todo-item">
               <h2>{item.title}</h2>
