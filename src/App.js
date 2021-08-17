@@ -9,25 +9,25 @@ function App() {
   const [todoList, setTodoList] = useState([
     {
       title: "Clean Room",
-      added: new Date(new Date().setDate(new Date().getDate() - 1)),
+      added: new Date(2021, 7, 16),
       deadline: new Date(2021, 7, 16), 
       id: 1,
     },
     {
       title: "Setup development environment",
-      added: new Date(),
+      added: new Date(2021, 7, 14),
       deadline: new Date(2021, 7, 16),
       id: 2,
     },
     {
       title: "Develop website and add content",
-      added: new Date(),
+      added: new Date(2021, 7, 14),
       deadline: new Date(2030, 7, 24),
       id: 3,
     },
     {
       title: "Deploy to live server",
-      added: new Date(),
+      added: new Date(2021, 7, 14),
       deadline: new Date(2030, 8, 25),
       id: 4,
     },
