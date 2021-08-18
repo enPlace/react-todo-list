@@ -1,8 +1,7 @@
-const Finished = ({finishedList, handleDelete, handleRestore, showHide}) => {
-  let display = "" // showHide === "finished" ? "" : "hide"
+const Finished = ({finishedList, handleDelete, handleRestore}) => {
 
   return (
-    <div className={"finished list-container " +display}>
+    <div className={"finished list-container "}>
       <h1>Finished:</h1>
       <ul className="finished-list">
         {finishedList.map((item) => (
