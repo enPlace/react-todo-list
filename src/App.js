@@ -2,15 +2,14 @@ import { useState } from "react";
 import Navbar from "./Components/Navbar";
 import Todos from "./Components/Todos/Todos";
 import Finished from "./Components/Finished";
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   const [idCounter, setIdCounter] = useState(7);
-  const [showHide, setShowHide] = useState("todo")
   const [todoList, setTodoList] = useState([
     {
       title: "Clean Room",
       added: new Date(2021, 7, 16),
-      deadline: new Date(2021, 7, 16), 
+      deadline: new Date(2021, 7, 16),
       id: 1,
     },
     {
@@ -73,43 +72,46 @@ function App() {
     setNewTask({
       ...newTask,
       [e.target.name]: e.target.value,
-    })
-  }
-  const handleShowHide = (id) =>{
-    return id==="todo" ? setShowHide("todo") : setShowHide("finished")
-  }
+    });
+  };
 
   function handleAddTask() {
-    newTask.added = new Date()
-    newTask.id = idCounter
-    const deadline = newTask.deadline.split("/")
-    newTask.deadline = new Date(deadline[2], deadline[0]-1, deadline[1])
-    setIdCounter(idCounter+1)
-    todoList.unshift(newTask)
+    newTask.added = new Date();
+    newTask.id = idCounter;
+    const deadline = newTask.deadline.split("/");
+    newTask.deadline = new Date(deadline[2], deadline[0] - 1, deadline[1]);
+    setIdCounter(idCounter + 1);
+    todoList.unshift(newTask);
     setNewTask({
       title: "",
       deadline: "",
-    })
+    });
   }
 
   return (
-    <div className="App">
-      <Navbar handleShowHide = {handleShowHide} showHide = {showHide}></Navbar>
-      <Todos
-        todoList={todoList}
-        handleComplete={handleComplete}
-        handleAddTask={handleAddTask}
-        handleChange = {handleChange}
-        newTask = {newTask}
-        showHide = {showHide}
-      ></Todos>
-      <Finished
-        finishedList={finishedList}
-        handleDelete={handleDelete}
-        handleRestore={handleRestore}
-        showHide= {showHide}
-      ></Finished>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar></Navbar>
+        <Switch>
+          <Route exact path="/">
+            <Todos
+              todoList={todoList}
+              handleComplete={handleComplete}
+              handleAddTask={handleAddTask}
+              handleChange={handleChange}
+              newTask={newTask}
+            ></Todos>
+          </Route>
+          <Route path = "/finished">
+            <Finished
+              finishedList={finishedList}
+              handleDelete={handleDelete}
+              handleRestore={handleRestore}
+            ></Finished>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -1,5 +1,5 @@
 const Finished = ({finishedList, handleDelete, handleRestore, showHide}) => {
-  let display = showHide === "finished" ? "" : "hide"
+  let display = "" // showHide === "finished" ? "" : "hide"
 
   return (
     <div className={"finished list-container " +display}>

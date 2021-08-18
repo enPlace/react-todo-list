@@ -1,25 +1,44 @@
-const Navbar = ({ handleShowHide, showHide }) => {
-  let todoStatus = showHide === "todo" ? "active" : "";
-  let finishedStatus = showHide === "finished" ? "active" : "";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+const Navbar = () => {
+  const [todoStatus, setTodoStatus] = useState("active");
+  const [finishedStatus, setFinishedStatus] = useState("");
+
+  const handleStatusChange = (name) => {
+    if(name === "todo") {
+      setTodoStatus("active")
+      setFinishedStatus("")
+      console.log(name)
+    }else if (name ==="finished") {
+      setFinishedStatus("active")
+      setTodoStatus("")
+      console.log(name)
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="links">
-        <p
-          className={todoStatus}
+        <Link
           name="todo"
-          onClick={() => handleShowHide("todo")}
+          to="/"
+          className={todoStatus}
+          onClick={() => {
+            handleStatusChange("todo");
+          }}
         >
           Todo's
-        </p>
-        <p
-        className = {finishedStatus}
+        </Link>
+        <Link
           name="finished"
+          to="/finished"
+          className={finishedStatus}
           onClick={() => {
-            handleShowHide("finished");
+            handleStatusChange("finished");
           }}
         >
           Finished tasks
-        </p>
+        </Link>
         <a
           href="https://github.com/enPlace/react-todo-list"
           target="_blank"

@@ -4,12 +4,10 @@ const Todos = ({
   handleAddTask,
   handleChange,
   newTask,
-  showHide
 }) => {
-  let display = showHide!=="todo" ? "hide" : ""
 
   return (
-    <div className={"todos list-container " + display}>
+    <div className="todos list-container ">
       <div className="input">
         <form
           onSubmit={(e) => {
@@ -57,7 +55,7 @@ const Todos = ({
                 Date added: {item.added.getMonth() + 1}/{item.added.getDate()}/
                 {item.added.getFullYear()}
               </p>
-              <p class={pastdueValue}>
+              <p className={pastdueValue}>
                 Deadline: {item.deadline.getMonth() + 1}/
                 {item.deadline.getDate()}/{item.deadline.getFullYear()}
               </p>

@@ -44,6 +44,12 @@
   text-decoration: none;
   padding: 6px;
 }
+.navbar a.active{
+  color : #f1356d;
+  transform: scale(1.2);
+  border-bottom: 2px solid #f1356d;
+  font-weight: bold;
+}
 .navbar a:hover {
   color: #f1356d;
   cursor: pointer;
