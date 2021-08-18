@@ -15,6 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     <img src="./todo-component.gif" alt="todo-component"/>
 
 - Add a new task with a deadline date 
+-
     <img src="./todo-add.gif" alt="todo-add"/>
     
 - Displays a "past due" color when the deadline has passed 
