@@ -12,16 +12,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features and Previews
 - Implements controlled components for the form inputs
-<img src="./todo-component.gif" alt="todo-component"/>
+    <img src="./todo-component.gif" alt="todo-component"/>
+
 - Add a new task with a deadline date 
     <img src="./todo-add.gif" alt="todo-add"/>
+    
 - Displays a "past due" color when the deadline has passed 
-<img src="./past-due.png" alt="past-due"/>
+
+    <img src="./past-due.png" alt="past-due"/>
+
 - Completing a todo item saves it in the "Finished tasks" list 
-<img src="./todo-complete.gif" alt="todo-complete"/>
+    <img src="./todo-complete.gif" alt="todo-complete"/>
+
 - From the finished tasks list, one can restore any task to the todo list or delete it.
-<img src="./todo-restore.gif" alt="todo-restore"/> 
-<img src="./todo-delete.gif" alt="todo-delete"/>
+    <img src="./todo-restore.gif" alt="todo-restore"/> 
+    <img src="./todo-delete.gif" alt="todo-delete"/>
 
 
 
