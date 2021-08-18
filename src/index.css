@@ -23,22 +23,6 @@
   color: #f1356d;
 }
 
-.navbar p {
-  margin-left: 20px;
-  text-decoration: none;
-  padding: 6px;
-}
-.navbar p.active {
-  color : #f1356d;
-  transform: scale(1.2);
-  border-bottom: 2px solid #f1356d;
-  font-weight: bold;
-
-}
-.navbar p:hover {
-  color: #f1356d;
-  cursor: pointer;
-}
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
