@@ -40,9 +40,8 @@ const Todos = ({
       <ul className="todo-list">
         {todoList.map((item) => {
           let pastdueValue = item.deadline < new Date() ? "past-due" : ""
-
           return (
-            <li className="todo-item">
+            <li key = {item.id} className="todo-item">
               <h2>{item.title}</h2>
               <button
                 onClick={() => {

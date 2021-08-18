@@ -5,7 +5,7 @@ const Finished = ({finishedList, handleDelete, handleRestore}) => {
       <h1>Finished:</h1>
       <ul className="finished-list">
         {finishedList.map((item) => (
-          <li className="finished-item">
+          <li className="finished-item" key = {item.id}>
             <h2>{item.title}</h2>
             <button onClick = {()=>{
               handleDelete(item.id)
